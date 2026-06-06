@@ -1,0 +1,39 @@
+{
+  "name": "merging-ravenna",
+  "version": "0.1.0",
+  "description": "Standalone client for Merging Technologies RAVENNA devices (Hapi / Horus / Anubis) over their CometD/WebSocket control protocol. Unofficial; not affiliated with Merging Technologies.",
+  "keywords": [
+    "merging",
+    "ravenna",
+    "aes67",
+    "hapi",
+    "horus",
+    "anubis",
+    "cometd",
+    "bayeux"
+  ],
+  "license": "MIT",
+  "author": "Matthew Robbetts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrobbetts/merging_ravenna.git"
+  },
+  "main": "index.js",
+  "type": "commonjs",
+  "files": [
+    "index.js",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate-device.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

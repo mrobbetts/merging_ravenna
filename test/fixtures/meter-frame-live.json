@@ -1,0 +1,37 @@
+{
+  "_comment": "Real /ravenna/meter frame captured with audio flowing (Hapi MkII H96149). Stream(id 1) input ch0-3 is routed to D/A(id 60) output ch0-3 via _connections; the D/A custom.outs.attenuation is -400 (=-40.0 dB, gain 0.01). The D/A output meter therefore reads floor(StreamInput * 0.01) channel-by-channel, proving the level integers are LINEAR amplitude. Trimmed to the two modules that carry the calibration; arrays trimmed to the 4 active channels.",
+  "channel": "/ravenna/meter",
+  "data": {
+    "path": "$._modules[?(@.id==3)][0]",
+    "value": {
+      "state": {
+        "_modules": [
+          {
+            "id": 1,
+            "type": 3,
+            "meters": {
+              "ins": {
+                "levels": [3035, 2682, 3423, 3377, 0, 0, 0, 0],
+                "levels_hold": [19538, 7074, 18158, 7086, 0, 0, 0, 0]
+              },
+              "outs": {
+                "levels": [0, 0, 0, 0, 0, 0, 0, 0],
+                "levels_hold": [0, 0, 0, 0, 0, 0, 0, 0]
+              }
+            }
+          },
+          {
+            "id": 60,
+            "type": 20,
+            "meters": {
+              "outs": {
+                "levels": [30, 26, 34, 33, 0, 0, 0, 0],
+                "levels_hold": [195, 70, 181, 70, 0, 0, 0, 0]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

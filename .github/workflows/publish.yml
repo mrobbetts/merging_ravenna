@@ -1,0 +1,33 @@
+# Publishes to npm when you push a version tag (e.g. `git tag v0.1.1 && git push --tags`).
+# Setup required ONCE:
+#   1. On npmjs.com create an "Automation" access token (exempt from 2FA).
+#   2. Add it to this repo: Settings -> Secrets and variables -> Actions -> New
+#      repository secret, name it NPM_TOKEN.
+# (Alternative: configure npm "trusted publishing" / OIDC and drop NODE_AUTH_TOKEN —
+#  then no stored secret is needed. `--provenance` already uses the id-token below.)
+#
+# Tip: bump "version" in package.json to match the tag before pushing.
+
+name: publish
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write        # lets npm attach a provenance attestation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm test
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,152 @@
+{
+  "channel": "/ravenna/settings",
+  "data": {
+    "path": "$",
+    "value": {
+      "_modules": [
+        {
+          "id": 0,
+          "type": 1,
+          "sub_type": 0,
+          "name": "ZMAN"
+        },
+        {
+          "id": 1,
+          "type": 3,
+          "sub_type": 0,
+          "name": "Stream"
+        },
+        {
+          "id": 2,
+          "type": 4,
+          "sub_type": 0,
+          "name": "Sync"
+        },
+        {
+          "id": 30,
+          "type": 15,
+          "sub_type": 0,
+          "name": "Headphone",
+          "custom": {
+            "outs": {
+              "mute": false,
+              "attenuation": -150,
+              "roll_off_filter": 2,
+              "channels": [
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                }
+              ],
+              "capabilities": {
+                "mute": true,
+                "attenuation": true,
+                "attenuation_info": {
+                  "min": -600,
+                  "max": 120,
+                  "step": 1
+                },
+                "roll_off_filter": true,
+                "roll_off_filters": {
+                  "Slow": 0,
+                  "Sharp": 1,
+                  "Apodizing": 2,
+                  "Brickwall": 3
+                },
+                "channel": {
+                  "trim": true,
+                  "trim_info": {
+                    "min": -600,
+                    "max": 0,
+                    "step": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 60,
+          "type": 20,
+          "sub_type": 218,
+          "name": "D/A 1",
+          "custom": {
+            "outs": {
+              "mute": false,
+              "attenuation": -335,
+              "out_max_level": 0,
+              "roll_off_filter": 2,
+              "channels": [
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                },
+                {
+                  "trim": 0
+                }
+              ],
+              "capabilities": {
+                "mute": true,
+                "attenuation": true,
+                "attenuation_info": {
+                  "min": -600,
+                  "max": 0,
+                  "step": 1
+                },
+                "out_max_level": true,
+                "roll_off_filter": true,
+                "roll_off_filters": {
+                  "Slow": 0,
+                  "Sharp": 1,
+                  "Apodizing": 2,
+                  "Brickwall": 3
+                },
+                "channel": {
+                  "trim": true,
+                  "trim_info": {
+                    "min": -600,
+                    "max": 0,
+                    "step": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 100,
+          "type": 26,
+          "sub_type": 0,
+          "name": "SPDIF"
+        }
+      ],
+      "identity": {
+        "vendor": "Merging Technologies",
+        "product": "HAPI_MkII",
+        "serial": "H96149"
+      },
+      "state": {
+        "muted": false
+      }
+    }
+  }
+}

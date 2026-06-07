@@ -62,7 +62,7 @@ test('module-root roll_off_filter echo emits roll_off_filter', () => {
 test('module-root out_max_level echo emits out_max_level (0/1 toggle)', () => {
   const { eng, events } = seeded();
   eng._maybeEmitParam(moduleRootEcho(eng, 60, { scalars: { out_max_level: 1 } }));
-  assert.deepStrictEqual(events, [{ moduleId: 60, key: 'out_max_level', raw: 1, value: 1, unit: 'int' }]);
+  assert.deepStrictEqual(events, [{ moduleId: 60, key: 'out_max_level', raw: 1, value: 1, unit: 'enum' }]);
 });
 
 test('module-root channel_trim echo emits only the changed channel, with channelIndex', () => {

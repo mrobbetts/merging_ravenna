@@ -266,6 +266,15 @@ class RavennaEngine extends EventEmitter {
     if (!desc) throw new Error(`Unknown parameter '${key}'`);
 
     let v = value;
+    if (desc.unit === 'enum') {
+      // Accept either the integer or a label string (e.g. 'Brickwall', '+24 dBu').
+      if (typeof v === 'string') {
+        const map = this._enumMapFor(moduleId, key);
+        const hit = map && Object.keys(map).find((k) => k.toLowerCase() === v.toLowerCase());
+        if (hit != null) v = map[hit];
+        if (typeof v === 'string') v = parseInt(v, 10); // numeric-string fallback ("3")
+      }
+    }
     if (desc.unit === 'tenths-db') {
       v = dbToTenths(value);
       const cap = this._capFor(moduleId, key);
@@ -284,6 +293,15 @@ class RavennaEngine extends EventEmitter {
     if (!c) return null;
     if (key === 'attenuation') return c.attenuation || null;
     if (key === 'channel_trim') return c.trim || null;
+    return null;
+  }
+
+  /** Label->int map for an enum param: static (PARAMS) or device-provided (capabilities). */
+  _enumMapFor(moduleId, key) {
+    const desc = PARAMS[key];
+    if (desc && desc.enum) return desc.enum;                 // model-supplied (e.g. out_max_level)
+    const c = this.capabilities[moduleId];
+    if (key === 'roll_off_filter' && c && c.rollOff) return c.rollOff; // device-supplied
     return null;
   }
 
@@ -416,7 +434,7 @@ class RavennaEngine extends EventEmitter {
     }
     if (typeof outs.out_max_level === 'number' && outs.out_max_level !== prev.out_max_level) {
       prev.out_max_level = outs.out_max_level;
-      this.emit('param', { moduleId, key: 'out_max_level', raw: outs.out_max_level, value: outs.out_max_level, unit: 'int' });
+      this.emit('param', { moduleId, key: 'out_max_level', raw: outs.out_max_level, value: outs.out_max_level, unit: 'enum' });
     }
     if (Array.isArray(outs.channels)) {
       if (!Array.isArray(prev.trims)) prev.trims = [];

@@ -118,6 +118,25 @@ test('out_max_level set-frame shape', () => {
   });
 });
 
+test('enum params accept a label string OR the integer', () => {
+  // model-supplied enum (out_max_level): +18 dBu = 0, +24 dBu = 1
+  assert.deepStrictEqual(captureSet('out_max_level', '+24 dBu').value, { out_max_level: 1 });
+  assert.deepStrictEqual(captureSet('out_max_level', '+18 dBu').value, { out_max_level: 0 });
+  // device-supplied enum (roll_off_filter), case-insensitive
+  assert.deepStrictEqual(captureSet('roll_off_filter', 'Brickwall').value, { roll_off_filter: 3 });
+  assert.deepStrictEqual(captureSet('roll_off_filter', 'sharp').value, { roll_off_filter: 1 });
+  // integers still work unchanged
+  assert.deepStrictEqual(captureSet('out_max_level', 0).value, { out_max_level: 0 });
+  assert.deepStrictEqual(captureSet('roll_off_filter', 2).value, { roll_off_filter: 2 });
+});
+
+test('catalog exposes the out_max_level label map', () => {
+  const e = buildCatalog(tree).find((x) => x.moduleId === 60 && x.key === 'out_max_level');
+  assert.ok(e);
+  assert.strictEqual(e.unit, 'enum');
+  assert.deepStrictEqual(e.enum, { '+18 dBu': 0, '+24 dBu': 1 });
+});
+
 test('channel_trim set-frame targets one channel within the channels array', () => {
   const f = captureSet('channel_trim', -3, { channelIndex: 2 }); // -3 dB on ch index 2
   assert.strictEqual(f.path, '$._modules[?(@.id==60)][0].custom.outs');

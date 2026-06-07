@@ -60,11 +60,14 @@ const PARAMS = {
     capEnum: 'roll_off_filters',
     build: (v) => ({ roll_off_filter: v | 0 })
   },
-  // out_max_level is a 0/1 toggle between the card's two output reference levels.
+  // out_max_level selects the card's output reference level. The device exposes only
+  // the raw int (0/1) with NO label map, so the meanings are MODEL knowledge encoded
+  // here (Hapi MkII D/A, sub_type 218; may differ on other cards). Confirmed mapping.
   out_max_level: {
-    section: 'outs', unit: 'int', confidence: 'confirmed',
+    section: 'outs', unit: 'enum', confidence: 'confirmed',
     capFlag: 'out_max_level',
-    build: (v) => ({ out_max_level: v ? 1 : 0 })
+    enum: { '+18 dBu': 0, '+24 dBu': 1 },
+    build: (v) => ({ out_max_level: v | 0 })
   },
   // Per-channel trim is an array within custom.outs; the partial-array shape (target
   // channel carries {trim}, others {}) is confirmed to apply on the device.

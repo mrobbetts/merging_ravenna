@@ -91,11 +91,11 @@ function buildCatalog(tree) {
         }));
       }
 
-      // out max level
+      // out max level (model-supplied enum: device gives only the int)
       if (typeof sec.out_max_level === 'number' && caps.out_max_level) {
         out.push(Object.assign({}, base, {
           key: 'out_max_level', raw: sec.out_max_level, value: sec.out_max_level,
-          unit: 'int', min: null, max: null, step: null, enum: null,
+          unit: 'enum', min: null, max: null, step: null, enum: PARAMS.out_max_level.enum || null,
           settable: true, confidence: PARAMS.out_max_level.confidence
         }));
       }

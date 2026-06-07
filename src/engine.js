@@ -4,6 +4,7 @@ const EventEmitter = require('events');
 const WebSocket = require('ws');
 const { buildCatalog } = require('./catalog');
 const { checkCompat } = require('./compat');
+const { readSystem, systemWriteFrame } = require('./system');
 const { moduleOutsPath, PARAMS, dbToTenths } = require('./paths');
 
 /**
@@ -70,6 +71,7 @@ class RavennaEngine extends EventEmitter {
     this.catalog = [];
     this.capabilities = {};
     this.compat = null;
+    this.system = [];
   }
 
   // ---- lifecycle ----------------------------------------------------------
@@ -336,9 +338,47 @@ class RavennaEngine extends EventEmitter {
     }
     this.catalog = buildCatalog(tree);
     this.compat = checkCompat(tree);
+    this.system = readSystem(tree);
     this.emit('tree', tree);
     this.emit('catalog', this.catalog);
     this.emit('compat', this.compat);
+    this.emit('system', this.system);
+  }
+
+  /** The last full settings tree received (raw), or null. */
+  getTree() { return this.tree; }
+
+  /** The modeled system-domain snapshot (clock/PTP/sync/health/…), or []. */
+  getSystem() { return this.system || []; }
+
+  /** One system snapshot entry by key, or null. */
+  getSystemValue(key) { return (this.system || []).find((e) => e.key === key) || null; }
+
+  /**
+   * Set a SYSTEM-domain parameter (clock / PTP / sync / device flags) by its key.
+   * Accepts an enum label string (e.g. 'Internal', '48 kHz') or the raw value;
+   * resolves it against the live tree's capabilities and publishes the probe-
+   * confirmed { path, value } shape. Throws for unknown or non-settable keys.
+   */
+  setSystem(key, value) {
+    const frame = systemWriteFrame(key, value, this.tree || {});
+    return this.publishSettings(frame.path, frame.value);
+  }
+
+  /**
+   * Read an arbitrary subtree of the last settings tree by a small dotted path,
+   * e.g. 'network.PTP.Status' or 'identity.serial'. Returns the whole tree for ''
+   * or '$'. Null if absent. Convenience for emitting raw subtrees (Node-RED).
+   */
+  getSubtree(path) {
+    let node = this.tree;
+    if (path == null || path === '' || path === '$') return node || null;
+    const parts = String(path).replace(/^\$\.?/, '').split('.').filter(Boolean);
+    for (const p of parts) {
+      if (node == null || typeof node !== 'object') return null;
+      node = node[p];
+    }
+    return node === undefined ? null : node;
   }
 
   _handleMessage(m) {

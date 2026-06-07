@@ -4,5 +4,7 @@ node_modules/
 # local artifacts from the live tools (may contain device serial/config)
 live-*.txt
 validate-report-*.json
+system-discovery-*.json
+probe-system-*.json
 
 .DS_Store

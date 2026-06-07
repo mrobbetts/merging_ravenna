@@ -63,15 +63,56 @@ eng.on('catalog', (cat) => {
 `confidence` is `confirmed` (set-frame verified on a real device), `inferred`
 (derived from the state shape; very likely correct), or `unknown`.
 
+Enum parameters (e.g. `roll_off_filter`, `out_max_level`) accept **either a label
+string or the raw integer** — `setParam(60, 'out_max_level', '+24 dBu')` and
+`setParam(60, 'out_max_level', 1)` are equivalent (label match is case-insensitive).
+
+## System domain (clock, PTP, sync, health)
+
+Beyond the per-module audio controls, the engine also models the device-wide
+**system** domain — sample rate, frame size, clock source, PTP, temperature,
+uptime, and assorted device flags — read from the parts of the state tree the
+audio catalog doesn't cover:
+
+```js
+eng.on('system', (snap) => {
+  // [{ key, label, group, unit, value, raw, enum, settable, readonly, note }, ...]
+  // e.g. { key:'sample_rate', value:'44.1 kHz', raw:44100, enum:{'48 kHz':48000,...}, settable:true }
+});
+
+eng.getSystem();                       // current snapshot (groups: Clock/Sync/PTP/Device/Health/Advanced)
+eng.getSystemValue('sample_rate');     // one entry by key
+
+// Set a system param by label or raw value. Clock/rate changes RE-CLOCK the device,
+// so do these with audio off:
+eng.setSystem('sample_rate', '48 kHz');    // or 48000
+eng.setSystem('sync_source', 'Internal');  // or the raw input id
+eng.setSystem('frame_size', 32);
+
+// Generic raw access to any part of the tree:
+eng.getTree();                         // last full settings tree
+eng.getSubtree('network.PTP.Status');  // any subtree by dotted / $ path
+```
+
+Settable system params are **hardware-confirmed** by `scripts/probe-system.js`
+(set → re-read → restore, behind a meter-silence gate). Pure telemetry (PTP lock,
+temperature, uptime) is marked `readonly` and never settable. Some params carry a
+`note` describing a dependency (e.g. PTP priorities apply only in manual-grandmaster
+mode). Use `scripts/discover-system.js` (read-only) to dump the system tree on
+unfamiliar firmware.
+
 ## API (summary)
 
 - `new RavennaEngine({ host, path?, livenessMs?, backoff? })`
 - `.connect()`, `.close()`
-- `.setParam(moduleId, key, value, { channelIndex? })` — high-level, unit-aware, clamped
+- `.setParam(moduleId, key, value, { channelIndex? })` — high-level, unit-aware, clamped; enums accept a label or int
 - `.setModuleOuts(moduleId, valueObj)` — mid-level
 - `.publishSettings(path, value)` — raw escape hatch
+- `.setSystem(key, value)` — set a system-domain param (clock/PTP/sync/flags) by label or raw value
+- `.getSystem()`, `.getSystemValue(key)` — modeled system snapshot
+- `.getTree()`, `.getSubtree(path)` — raw last tree / any subtree by dotted-or-`$` path
 - `.catalog`, `.tree`, `.capabilities`, `.online`
-- events: `online, offline, status, settings, statusmsg, errors, tree, catalog, param, error`
+- events: `online, offline, status, settings, statusmsg, errors, tree, catalog, param, system, error`
 
 ## Testing
 
@@ -91,9 +132,12 @@ share. A meter pre-flight gate aborts if any output is passing audio.
 
 ## Extending to new parameters / devices
 
-Confirmed and inferred set-frame shapes live in `src/paths.js`. To add a parameter
-(or support an Anubis monitor control), capture one set frame from the device web UI
-and add a descriptor there — no engine changes needed.
+Confirmed and inferred set-frame shapes for the **audio** params live in `src/paths.js`.
+To add one (or support an Anubis monitor control), capture a set frame from the device
+web UI and add a descriptor there — no engine changes needed. **System**-domain
+descriptors (their read path, unit, enum source, and confirmed write shape) live in
+`src/system.js`; use `scripts/discover-system.js` to dump an unfamiliar device's tree
+and `scripts/probe-system.js` to confirm new write shapes.
 
 ## License
 

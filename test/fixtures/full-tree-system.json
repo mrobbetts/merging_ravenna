@@ -1,0 +1,6439 @@
+{
+ "_firmware_version": "1.9.0b62872",
+ "_firmware_generation": 2,
+ "_maintenance_mode_version": "114",
+ "_boot_time": "2026-06-06 20:13:27",
+ "_consumer_mode": false,
+ "_big_jitter_buffer": false,
+ "_fixed_playout_delay": false,
+ "_auto_connect_from_source": false,
+ "_auto_sample_rate": true,
+ "_ASIO_clock": 2,
+ "_auto_save": true,
+ "_peer_filtering": true,
+ "identity": {
+  "vendor": "Merging Technologies",
+  "product": "HAPI_MkII",
+  "name": "HapiMkII_10000",
+  "location": "",
+  "serial": "H10000",
+  "icon_url": "0.0.0.0/device_icon.icns",
+  "ANEMAN_image_url": "0.0.0.0/device_ANEMAN.png",
+  "zman": {
+   "vendor": "Merging Technologies",
+   "product": "ZMAN Family",
+   "serial": "100000",
+   "name": "ZMAN_Z000"
+  },
+  "hapi_mission": 0,
+  "product_type": 2,
+  "identify": false
+ },
+ "actions": {
+  "mute": {},
+  "create_connections": {},
+  "delete_connections": {},
+  "delete_all_connections": {},
+  "set_engine_ios_info": {},
+  "delete_all_sources": {},
+  "delete_all_sinks": {},
+  "create_path": {},
+  "delete_path": {},
+  "delete_all_paths": {},
+  "delete_and_create_paths": {},
+  "load_from_preset": {},
+  "save_to_preset": {},
+  "delete_preset": {},
+  "load_from_next_preset": {},
+  "load_from_prev_preset": {},
+  "clear_all_peers": {},
+  "clear_all_input_peers": {},
+  "clear_all_output_peers": {},
+  "usb_reset": {},
+  "add_multicast_ip": {},
+  "del_multicast_ip": {},
+  "read_all_multicast_ips": {}
+ },
+ "_language": 1,
+ "_screensaver": 15,
+ "_screensaver_page": 5,
+ "_config_properties": {
+  "name": "my_config",
+  "comment": "",
+  "color": "#000000"
+ },
+ "_user_interface": {
+  "analog_in_groups": {
+   "selected_group": 0,
+   "groups_enabled": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "groups_color": [
+    "#aaaa66",
+    "#aa66aa",
+    "#66aaaa",
+    "#66aa66",
+    "#6666aa",
+    "#aa3366",
+    "#aa6633",
+    "#66aa33"
+   ],
+   "channels_group": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  },
+  "presets": [
+   {
+    "name": "Preset 1"
+   },
+   {
+    "name": "Preset 2"
+   },
+   {
+    "name": "Preset 3"
+   },
+   {
+    "name": "Preset 4"
+   },
+   {
+    "name": "Preset 5"
+   },
+   {
+    "name": "Preset 6"
+   },
+   {
+    "name": "Preset 7"
+   },
+   {
+    "name": "Preset 8"
+   },
+   {
+    "name": "Preset 9"
+   },
+   {
+    "name": "Preset 10"
+   },
+   {
+    "name": "Preset 11"
+   },
+   {
+    "name": "Preset 12"
+   },
+   {
+    "name": "Preset 13"
+   },
+   {
+    "name": "Preset 14"
+   },
+   {
+    "name": "Preset 15"
+   },
+   {
+    "name": "Preset 16"
+   },
+   {
+    "name": "Preset 17"
+   },
+   {
+    "name": "Preset 18"
+   }
+  ],
+  "debug": false,
+  "volume_channels_bitfield": 255
+ },
+ "ios": [
+  {
+   "name": "Stream",
+   "id": "1",
+   "type": "io",
+   "ins_hierarchy": "Physical Inputs",
+   "ins_hierarchy_color": "#cccccc",
+   "outs_hierarchy": "Physical Outputs",
+   "outs_hierarchy_color": "#cccccc",
+   "ins": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 2,
+     "name": "3",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 3,
+     "name": "4",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 4,
+     "name": "5",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 5,
+     "name": "6",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 6,
+     "name": "7",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 7,
+     "name": "8",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 8,
+     "name": "9",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 9,
+     "name": "10",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 10,
+     "name": "11",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 11,
+     "name": "12",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 12,
+     "name": "13",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 13,
+     "name": "14",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 14,
+     "name": "15",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 15,
+     "name": "16",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 16,
+     "name": "17",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 17,
+     "name": "18",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 18,
+     "name": "19",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 19,
+     "name": "20",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 20,
+     "name": "21",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 21,
+     "name": "22",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 22,
+     "name": "23",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 23,
+     "name": "24",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 24,
+     "name": "25",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 25,
+     "name": "26",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 26,
+     "name": "27",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 27,
+     "name": "28",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 28,
+     "name": "29",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 29,
+     "name": "30",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 30,
+     "name": "31",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 31,
+     "name": "32",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 32,
+     "name": "33",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 33,
+     "name": "34",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 34,
+     "name": "35",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 35,
+     "name": "36",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 36,
+     "name": "37",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 37,
+     "name": "38",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 38,
+     "name": "39",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 39,
+     "name": "40",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 40,
+     "name": "41",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 41,
+     "name": "42",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 42,
+     "name": "43",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 43,
+     "name": "44",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 44,
+     "name": "45",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 45,
+     "name": "46",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 46,
+     "name": "47",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 47,
+     "name": "48",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 48,
+     "name": "49",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 49,
+     "name": "50",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 50,
+     "name": "51",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 51,
+     "name": "52",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 52,
+     "name": "53",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 53,
+     "name": "54",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 54,
+     "name": "55",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 55,
+     "name": "56",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 56,
+     "name": "57",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 57,
+     "name": "58",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 58,
+     "name": "59",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 59,
+     "name": "60",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 60,
+     "name": "61",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 61,
+     "name": "62",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 62,
+     "name": "63",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 63,
+     "name": "64",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 64,
+     "name": "65",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 65,
+     "name": "66",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 66,
+     "name": "67",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 67,
+     "name": "68",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 68,
+     "name": "69",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 69,
+     "name": "70",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 70,
+     "name": "71",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 71,
+     "name": "72",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 72,
+     "name": "73",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 73,
+     "name": "74",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 74,
+     "name": "75",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 75,
+     "name": "76",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 76,
+     "name": "77",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 77,
+     "name": "78",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 78,
+     "name": "79",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 79,
+     "name": "80",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 80,
+     "name": "81",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 81,
+     "name": "82",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 82,
+     "name": "83",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 83,
+     "name": "84",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 84,
+     "name": "85",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 85,
+     "name": "86",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 86,
+     "name": "87",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 87,
+     "name": "88",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 88,
+     "name": "89",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 89,
+     "name": "90",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 90,
+     "name": "91",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 91,
+     "name": "92",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 92,
+     "name": "93",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 93,
+     "name": "94",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 94,
+     "name": "95",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 95,
+     "name": "96",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 96,
+     "name": "97",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 97,
+     "name": "98",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 98,
+     "name": "99",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 99,
+     "name": "100",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 100,
+     "name": "101",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 101,
+     "name": "102",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 102,
+     "name": "103",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 103,
+     "name": "104",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 104,
+     "name": "105",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 105,
+     "name": "106",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 106,
+     "name": "107",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 107,
+     "name": "108",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 108,
+     "name": "109",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 109,
+     "name": "110",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 110,
+     "name": "111",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 111,
+     "name": "112",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 112,
+     "name": "113",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 113,
+     "name": "114",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 114,
+     "name": "115",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 115,
+     "name": "116",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 116,
+     "name": "117",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 117,
+     "name": "118",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 118,
+     "name": "119",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 119,
+     "name": "120",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 120,
+     "name": "121",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 121,
+     "name": "122",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 122,
+     "name": "123",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 123,
+     "name": "124",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 124,
+     "name": "125",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 125,
+     "name": "126",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 126,
+     "name": "127",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 127,
+     "name": "128",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 128,
+     "name": "129",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 129,
+     "name": "130",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 130,
+     "name": "131",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 131,
+     "name": "132",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 132,
+     "name": "133",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 133,
+     "name": "134",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 134,
+     "name": "135",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 135,
+     "name": "136",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 136,
+     "name": "137",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 137,
+     "name": "138",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 138,
+     "name": "139",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 139,
+     "name": "140",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 140,
+     "name": "141",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 141,
+     "name": "142",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 142,
+     "name": "143",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 143,
+     "name": "144",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 144,
+     "name": "145",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 145,
+     "name": "146",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 146,
+     "name": "147",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 147,
+     "name": "148",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 148,
+     "name": "149",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 149,
+     "name": "150",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 150,
+     "name": "151",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 151,
+     "name": "152",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 152,
+     "name": "153",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 153,
+     "name": "154",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 154,
+     "name": "155",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 155,
+     "name": "156",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 156,
+     "name": "157",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 157,
+     "name": "158",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 158,
+     "name": "159",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 159,
+     "name": "160",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 160,
+     "name": "161",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 161,
+     "name": "162",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 162,
+     "name": "163",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 163,
+     "name": "164",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 164,
+     "name": "165",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 165,
+     "name": "166",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 166,
+     "name": "167",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 167,
+     "name": "168",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 168,
+     "name": "169",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 169,
+     "name": "170",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 170,
+     "name": "171",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 171,
+     "name": "172",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 172,
+     "name": "173",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 173,
+     "name": "174",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 174,
+     "name": "175",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 175,
+     "name": "176",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 176,
+     "name": "177",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 177,
+     "name": "178",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 178,
+     "name": "179",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 179,
+     "name": "180",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 180,
+     "name": "181",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 181,
+     "name": "182",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 182,
+     "name": "183",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 183,
+     "name": "184",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 184,
+     "name": "185",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 185,
+     "name": "186",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 186,
+     "name": "187",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 187,
+     "name": "188",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 188,
+     "name": "189",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 189,
+     "name": "190",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 190,
+     "name": "191",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 191,
+     "name": "192",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 192,
+     "name": "193",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 193,
+     "name": "194",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 194,
+     "name": "195",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 195,
+     "name": "196",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 196,
+     "name": "197",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 197,
+     "name": "198",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 198,
+     "name": "199",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 199,
+     "name": "200",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 200,
+     "name": "201",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 201,
+     "name": "202",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 202,
+     "name": "203",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 203,
+     "name": "204",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 204,
+     "name": "205",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 205,
+     "name": "206",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 206,
+     "name": "207",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 207,
+     "name": "208",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 208,
+     "name": "209",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 209,
+     "name": "210",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 210,
+     "name": "211",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 211,
+     "name": "212",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 212,
+     "name": "213",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 213,
+     "name": "214",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 214,
+     "name": "215",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 215,
+     "name": "216",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 216,
+     "name": "217",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 217,
+     "name": "218",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 218,
+     "name": "219",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 219,
+     "name": "220",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 220,
+     "name": "221",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 221,
+     "name": "222",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 222,
+     "name": "223",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 223,
+     "name": "224",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 224,
+     "name": "225",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 225,
+     "name": "226",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 226,
+     "name": "227",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 227,
+     "name": "228",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 228,
+     "name": "229",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 229,
+     "name": "230",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 230,
+     "name": "231",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 231,
+     "name": "232",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 232,
+     "name": "233",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 233,
+     "name": "234",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 234,
+     "name": "235",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 235,
+     "name": "236",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 236,
+     "name": "237",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 237,
+     "name": "238",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 238,
+     "name": "239",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 239,
+     "name": "240",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 240,
+     "name": "241",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 241,
+     "name": "242",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 242,
+     "name": "243",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 243,
+     "name": "244",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 244,
+     "name": "245",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 245,
+     "name": "246",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 246,
+     "name": "247",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 247,
+     "name": "248",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 248,
+     "name": "249",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 249,
+     "name": "250",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 250,
+     "name": "251",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 251,
+     "name": "252",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 252,
+     "name": "253",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 253,
+     "name": "254",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 254,
+     "name": "255",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 255,
+     "name": "256",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "outs": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 2,
+     "name": "3",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 3,
+     "name": "4",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 4,
+     "name": "5",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 5,
+     "name": "6",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 6,
+     "name": "7",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 7,
+     "name": "8",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 8,
+     "name": "9",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 9,
+     "name": "10",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 10,
+     "name": "11",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 11,
+     "name": "12",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 12,
+     "name": "13",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 13,
+     "name": "14",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 14,
+     "name": "15",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 15,
+     "name": "16",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 16,
+     "name": "17",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 17,
+     "name": "18",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 18,
+     "name": "19",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 19,
+     "name": "20",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 20,
+     "name": "21",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 21,
+     "name": "22",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 22,
+     "name": "23",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 23,
+     "name": "24",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 24,
+     "name": "25",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 25,
+     "name": "26",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 26,
+     "name": "27",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 27,
+     "name": "28",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 28,
+     "name": "29",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 29,
+     "name": "30",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 30,
+     "name": "31",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 31,
+     "name": "32",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 32,
+     "name": "33",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 33,
+     "name": "34",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 34,
+     "name": "35",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 35,
+     "name": "36",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 36,
+     "name": "37",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 37,
+     "name": "38",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 38,
+     "name": "39",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 39,
+     "name": "40",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 40,
+     "name": "41",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 41,
+     "name": "42",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 42,
+     "name": "43",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 43,
+     "name": "44",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 44,
+     "name": "45",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 45,
+     "name": "46",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 46,
+     "name": "47",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 47,
+     "name": "48",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 48,
+     "name": "49",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 49,
+     "name": "50",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 50,
+     "name": "51",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 51,
+     "name": "52",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 52,
+     "name": "53",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 53,
+     "name": "54",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 54,
+     "name": "55",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 55,
+     "name": "56",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 56,
+     "name": "57",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 57,
+     "name": "58",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 58,
+     "name": "59",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 59,
+     "name": "60",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 60,
+     "name": "61",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 61,
+     "name": "62",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 62,
+     "name": "63",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 63,
+     "name": "64",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 64,
+     "name": "65",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 65,
+     "name": "66",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 66,
+     "name": "67",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 67,
+     "name": "68",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 68,
+     "name": "69",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 69,
+     "name": "70",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 70,
+     "name": "71",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 71,
+     "name": "72",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 72,
+     "name": "73",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 73,
+     "name": "74",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 74,
+     "name": "75",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 75,
+     "name": "76",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 76,
+     "name": "77",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 77,
+     "name": "78",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 78,
+     "name": "79",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 79,
+     "name": "80",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 80,
+     "name": "81",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 81,
+     "name": "82",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 82,
+     "name": "83",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 83,
+     "name": "84",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 84,
+     "name": "85",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 85,
+     "name": "86",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 86,
+     "name": "87",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 87,
+     "name": "88",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 88,
+     "name": "89",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 89,
+     "name": "90",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 90,
+     "name": "91",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 91,
+     "name": "92",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 92,
+     "name": "93",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 93,
+     "name": "94",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 94,
+     "name": "95",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 95,
+     "name": "96",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 96,
+     "name": "97",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 97,
+     "name": "98",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 98,
+     "name": "99",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 99,
+     "name": "100",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 100,
+     "name": "101",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 101,
+     "name": "102",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 102,
+     "name": "103",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 103,
+     "name": "104",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 104,
+     "name": "105",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 105,
+     "name": "106",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 106,
+     "name": "107",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 107,
+     "name": "108",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 108,
+     "name": "109",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 109,
+     "name": "110",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 110,
+     "name": "111",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 111,
+     "name": "112",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 112,
+     "name": "113",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 113,
+     "name": "114",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 114,
+     "name": "115",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 115,
+     "name": "116",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 116,
+     "name": "117",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 117,
+     "name": "118",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 118,
+     "name": "119",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 119,
+     "name": "120",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 120,
+     "name": "121",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 121,
+     "name": "122",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 122,
+     "name": "123",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 123,
+     "name": "124",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 124,
+     "name": "125",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 125,
+     "name": "126",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 126,
+     "name": "127",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 127,
+     "name": "128",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 128,
+     "name": "129",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 129,
+     "name": "130",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 130,
+     "name": "131",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 131,
+     "name": "132",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 132,
+     "name": "133",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 133,
+     "name": "134",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 134,
+     "name": "135",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 135,
+     "name": "136",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 136,
+     "name": "137",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 137,
+     "name": "138",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 138,
+     "name": "139",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 139,
+     "name": "140",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 140,
+     "name": "141",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 141,
+     "name": "142",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 142,
+     "name": "143",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 143,
+     "name": "144",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 144,
+     "name": "145",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 145,
+     "name": "146",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 146,
+     "name": "147",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 147,
+     "name": "148",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 148,
+     "name": "149",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 149,
+     "name": "150",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 150,
+     "name": "151",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 151,
+     "name": "152",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 152,
+     "name": "153",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 153,
+     "name": "154",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 154,
+     "name": "155",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 155,
+     "name": "156",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 156,
+     "name": "157",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 157,
+     "name": "158",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 158,
+     "name": "159",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 159,
+     "name": "160",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 160,
+     "name": "161",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 161,
+     "name": "162",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 162,
+     "name": "163",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 163,
+     "name": "164",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 164,
+     "name": "165",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 165,
+     "name": "166",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 166,
+     "name": "167",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 167,
+     "name": "168",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 168,
+     "name": "169",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 169,
+     "name": "170",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 170,
+     "name": "171",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 171,
+     "name": "172",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 172,
+     "name": "173",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 173,
+     "name": "174",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 174,
+     "name": "175",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 175,
+     "name": "176",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 176,
+     "name": "177",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 177,
+     "name": "178",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 178,
+     "name": "179",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 179,
+     "name": "180",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 180,
+     "name": "181",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 181,
+     "name": "182",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 182,
+     "name": "183",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 183,
+     "name": "184",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 184,
+     "name": "185",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 185,
+     "name": "186",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 186,
+     "name": "187",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 187,
+     "name": "188",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 188,
+     "name": "189",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 189,
+     "name": "190",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 190,
+     "name": "191",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 191,
+     "name": "192",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 192,
+     "name": "193",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 193,
+     "name": "194",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 194,
+     "name": "195",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 195,
+     "name": "196",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 196,
+     "name": "197",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 197,
+     "name": "198",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 198,
+     "name": "199",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 199,
+     "name": "200",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 200,
+     "name": "201",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 201,
+     "name": "202",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 202,
+     "name": "203",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 203,
+     "name": "204",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 204,
+     "name": "205",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 205,
+     "name": "206",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 206,
+     "name": "207",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 207,
+     "name": "208",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 208,
+     "name": "209",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 209,
+     "name": "210",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 210,
+     "name": "211",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 211,
+     "name": "212",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 212,
+     "name": "213",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 213,
+     "name": "214",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 214,
+     "name": "215",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 215,
+     "name": "216",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 216,
+     "name": "217",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 217,
+     "name": "218",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 218,
+     "name": "219",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 219,
+     "name": "220",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 220,
+     "name": "221",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 221,
+     "name": "222",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 222,
+     "name": "223",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 223,
+     "name": "224",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 224,
+     "name": "225",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 225,
+     "name": "226",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 226,
+     "name": "227",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 227,
+     "name": "228",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 228,
+     "name": "229",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 229,
+     "name": "230",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 230,
+     "name": "231",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 231,
+     "name": "232",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 232,
+     "name": "233",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 233,
+     "name": "234",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 234,
+     "name": "235",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 235,
+     "name": "236",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 236,
+     "name": "237",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 237,
+     "name": "238",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 238,
+     "name": "239",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 239,
+     "name": "240",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 240,
+     "name": "241",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 241,
+     "name": "242",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 242,
+     "name": "243",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 243,
+     "name": "244",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 244,
+     "name": "245",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 245,
+     "name": "246",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 246,
+     "name": "247",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 247,
+     "name": "248",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 248,
+     "name": "249",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 249,
+     "name": "250",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 250,
+     "name": "251",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 251,
+     "name": "252",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 252,
+     "name": "253",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 253,
+     "name": "254",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 254,
+     "name": "255",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 255,
+     "name": "256",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "configuration": {
+    "sampleRate": 44100
+   },
+   "capabilities": {
+    "sampleRate": [
+     44100,
+     48000,
+     88200,
+     96000,
+     176400,
+     192000,
+     352800,
+     384000
+    ]
+   },
+   "configured": true
+  },
+  {
+   "name": "AES",
+   "id": "20",
+   "type": "io",
+   "ins_hierarchy": "Physical Inputs",
+   "ins_hierarchy_color": "#cccccc",
+   "outs_hierarchy": "Physical Outputs",
+   "outs_hierarchy_color": "#cccccc",
+   "ins": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 2,
+     "name": "3",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 3,
+     "name": "4",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 4,
+     "name": "5",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 5,
+     "name": "6",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 6,
+     "name": "7",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 7,
+     "name": "8",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "outs": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 2,
+     "name": "3",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 3,
+     "name": "4",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 4,
+     "name": "5",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 5,
+     "name": "6",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 6,
+     "name": "7",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 7,
+     "name": "8",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "configuration": {
+    "sampleRate": 44100
+   },
+   "capabilities": {
+    "sampleRate": [
+     44100,
+     48000,
+     88200,
+     96000,
+     176400,
+     192000,
+     352800,
+     384000
+    ]
+   },
+   "configured": true
+  },
+  {
+   "name": "Headphone",
+   "id": "30",
+   "type": "io",
+   "outs_hierarchy": "Physical Outputs",
+   "outs_hierarchy_color": "#cccccc",
+   "ins": [],
+   "outs": [
+    {
+     "id": 0,
+     "name": "Left",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "Right",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "configuration": {
+    "sampleRate": 44100
+   },
+   "capabilities": {
+    "sampleRate": [
+     44100,
+     48000,
+     88200,
+     96000,
+     176400,
+     192000,
+     352800,
+     384000
+    ]
+   },
+   "configured": true
+  },
+  {
+   "name": "D/A 1",
+   "id": "60",
+   "type": "io",
+   "outs_hierarchy": "Physical Outputs",
+   "outs_hierarchy_color": "#cccccc",
+   "ins": [],
+   "outs": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 2,
+     "name": "3",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 3,
+     "name": "4",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 4,
+     "name": "5",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 5,
+     "name": "6",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 6,
+     "name": "7",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 7,
+     "name": "8",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "configuration": {
+    "sampleRate": 44100
+   },
+   "capabilities": {
+    "sampleRate": [
+     44100,
+     48000,
+     88200,
+     96000,
+     176400,
+     192000,
+     352800,
+     384000
+    ]
+   },
+   "configured": true
+  },
+  {
+   "name": "SPDIF",
+   "id": "100",
+   "type": "io",
+   "ins_hierarchy": "Physical Inputs",
+   "ins_hierarchy_color": "#cccccc",
+   "outs_hierarchy": "Physical Outputs",
+   "outs_hierarchy_color": "#cccccc",
+   "ins": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "outs": [
+    {
+     "id": 0,
+     "name": "1",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    },
+    {
+     "id": 1,
+     "name": "2",
+     "state": {
+      "_status": 1,
+      "audio_data_format": 0
+     }
+    }
+   ],
+   "configuration": {
+    "sampleRate": 44100
+   },
+   "capabilities": {
+    "sampleRate": [
+     44100,
+     48000,
+     88200,
+     96000,
+     176400,
+     192000,
+     352800,
+     384000
+    ]
+   },
+   "configured": true
+  }
+ ],
+ "_buildnr": "bond 2.0-0 (0)",
+ "network": {
+  "hostname": "HapiMkII_10000",
+  "interfaces": [
+   {
+    "ifname": "Primary",
+    "link": true,
+    "config": 1,
+    "address": "0.0.0.0",
+    "netmask": "255.255.255.192",
+    "mac": "30-d6-59-01-ec-e2",
+    "gateway": "0.0.0.0",
+    "primary_gateway": true,
+    "dns": "0.0.0.0",
+    "media_port": true,
+    "control_port": true,
+    "web_server_url": "0.0.0.0:80"
+   }
+  ],
+  "qos": {
+   "dscp": 34,
+   "asio_clock_dscp": 34
+  },
+  "web_ports": [
+   80,
+   81,
+   8080
+  ],
+  "PTP": {
+   "Domain": 0,
+   "DSCP": 46,
+   "Master": {
+    "Manual": false,
+    "Accuracy": 32,
+    "Class": 133,
+    "Prio1": 127,
+    "Prio2": 128,
+    "GMID": "00-00-00-00-00-00-00-00",
+    "SlaveOnly": false,
+    "DelayMechanism": 1,
+    "Announce": 1,
+    "Sync": -3
+   },
+   "Status": {
+    "GMID": "00-00-00-00-00-00-00-00",
+    "LockStatus": 3,
+    "NetworkJitter": 0,
+    "ClockJitter": 0,
+    "Interfaces": [
+     {
+      "State": 5,
+      "GMID": "00-00-00-00-00-00-00-00"
+     }
+    ],
+    "Master": true
+   }
+  },
+  "multi_interface_mode": false
+ },
+ "sessions": {
+  "sources": [],
+  "sinks": [
+   {
+    "id": 20,
+    "enabled": true,
+    "name": "sap://Flare JBL M2",
+    "description": "",
+    "is_volatile": false,
+    "io": "1",
+    "source": "sap://Flare JBL M2",
+    "manual_SDP": "",
+    "delay": 240,
+    "accept_less_channels": true,
+    "state": {
+     "sdp": {
+      "name": "Flare JBL M2",
+      "sdp": "v=0\r\no=- 2831188226 316773261 IN IP4 0.0.0.0\r\ns=Flare JBL M2\r\nc=IN IP4 239.69.0.3/15\r\nt=0 0\r\na=clock-domain:PTPv2 0\r\nm=audio 5004 RTP/AVP 98\r\nc=IN IP4 239.69.0.3/15\r\na=rtpmap:98 L24/44100/4\r\na=sync-time:0\r\na=framecount:48\r\na=ptime:1.08843541\r\na=mediaclk:direct=0\r\na=ts-refclk:ptp=IEEE1588-2008:00-00-00-00-00-00-00-00:0\r\na=recvonly\r\n",
+      "interfaces": [
+       {
+        "clockDomain": "PTPv2 0",
+        "address": "239.69.0.3/15",
+        "port": "5004",
+        "payload": "98 L24/44100/4",
+        "source": "",
+        "channelCount": 4
+       }
+      ]
+     },
+     "code": 3,
+     "input_interfaces": 0,
+     "rtspHost": "",
+     "rtp_interfaces": [
+      {
+       "status": 16,
+       "min_time": 4172
+      }
+     ],
+     "rtp_state": 1,
+     "delay": 240
+    },
+    "streams": [
+     {
+      "stats": {},
+      "ignore_refclk_GMID": true,
+      "ignore_refclk_Domain": false,
+      "map": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "id": 21,
+    "enabled": true,
+    "name": "",
+    "description": "",
+    "is_volatile": false,
+    "io": "1",
+    "source": "CoreAudio (MBP14)",
+    "manual_SDP": "",
+    "delay": 0,
+    "accept_less_channels": false,
+    "state": {
+     "sdp": {
+      "name": "CoreAudio (MBP14)",
+      "sdp": "v=0\r\no=- 1 0 IN IP4 0.0.0.0\r\ns=CoreAudio (MBP14)\r\nc=IN IP4 239.69.0.170/15\r\nt=0 0\r\na=clock-domain:PTPv2 0\r\na=ts-refclk:ptp=IEEE1588-2008:00-00-00-00-00-00-00-00:0\r\na=mediaclk:direct=0\r\nm=audio 5004 RTP/AVP 98\r\nc=IN IP4 239.69.0.170/15\r\na=rtpmap:98 L24/44100/2\r\na=source-filter: incl IN IP4 239.69.0.170 0.0.0.0\r\na=clock-domain:PTPv2 0\r\na=sync-time:0\r\na=framecount:48-192\r\na=palign:0\r\na=ptime:1.08843541\r\na=ts-refclk:ptp=IEEE1588-2008:00-00-00-00-00-00-00-00:0\r\na=mediaclk:direct=0\r\na=recvonly\r\n",
+      "interfaces": [
+       {
+        "clockDomain": "PTPv2 0",
+        "address": "239.69.0.170/15",
+        "port": "5004",
+        "payload": "98 L24/44100/2",
+        "source": "0.0.0.0",
+        "channelCount": 2
+       }
+      ]
+     },
+     "code": 3,
+     "input_interfaces": 0,
+     "rtspHost": "0.0.0.0",
+     "rtp_interfaces": [
+      {
+       "status": 16,
+       "min_time": 4013
+      }
+     ],
+     "rtp_state": 1,
+     "delay": 400
+    },
+    "streams": [
+     {
+      "stats": {},
+      "ignore_refclk_GMID": true,
+      "ignore_refclk_Domain": false,
+      "map": [
+       4,
+       5
+      ]
+     }
+    ]
+   }
+  ],
+  "capabilities": {
+   "manual": true,
+   "auto_unicast": true,
+   "SAP": true,
+   "mDNS-RTSP": true,
+   "NMOS": true,
+   "HOME": true,
+   "SIP": false,
+   "sink_accept_same_source": false
+  },
+  "sinks_safety_playout_delay_at_1FS": 0,
+  "sinks_SSM": false
+ },
+ "_frame_size_at_1FS": 48,
+ "capabilities": {
+  "_frame_size_at_1FS": [
+   6,
+   12,
+   16,
+   32,
+   48,
+   64
+  ],
+  "peering": false
+ },
+ "_timecode_ports": {
+  "sources": [
+   {
+    "id": 0,
+    "name": "HapiMkII_10000_TC_ref"
+   },
+   {
+    "id": 1,
+    "name": "HapiMkII_10000_LTC_in"
+   }
+  ],
+  "sinks": [
+   {
+    "id": 0,
+    "name": "HapiMkII_10000_LTC_out",
+    "source": "",
+    "state": {
+     "code": 1
+    }
+   }
+  ]
+ },
+ "_security": {
+  "state": {
+   "MLM": {
+    "features": {
+     "hapimkii_mission": true,
+     "production_mission": true
+    }
+   }
+  }
+ },
+ "_modules": [
+  {
+   "state": {
+    "cpu_load": 6.206896781921387,
+    "cpu0_load": 12.162161827087402,
+    "cpu1_load": 0,
+    "memory_load": 16.90234375,
+    "temperature": 61,
+    "memory_bandwidth": {
+     "write": 0,
+     "read": 0
+    },
+    "json_memory_load": 2,
+    "json_nb_allocators": 30,
+    "nb_connections": 6,
+    "nb_replies": 0,
+    "nb_requests": 4,
+    "httprtsp_clients": 1,
+    "cometd_clients": 4,
+    "cometd_messages": 5,
+    "applemidi_nb_participants": 0,
+    "VCXO_capacitor": "4.7uF",
+    "dante_capable": false,
+    "hapimkii": {
+     "main_run": 4,
+     "serial": 10000,
+     "switch_present": true
+    },
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "panic": false
+   },
+   "id": 0,
+   "sub_id": 0,
+   "type": 1,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "name": "ZMAN",
+   "actions": {
+    "actions": {
+     "measure_memory_bandwidth": {},
+     "refresh_from_eeprom": {}
+    }
+   }
+  },
+  {
+   "id": 1,
+   "sub_id": 0,
+   "type": 3,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "outputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "state": {
+    "ethernet_input_total_bandwidth": 1,
+    "ethernet_input_audio_bandwidth": 1,
+    "ethernet_output_gp_bandwidth": 8,
+    "ethernet_output_audio_bandwidth": 0,
+    "fpga_memory_load_for_output_streams_write": 5,
+    "fpga_memory_load_for_output_streams_read": 0,
+    "fpga_memory_load_for_input_streams_write": 0,
+    "fpga_memory_load_for_input_streams_read": 5,
+    "errors": {
+     "ethernet_input_wrong_sequence": {
+      "counter": 13,
+      "code": -1019,
+      "severity": 2
+     }
+    },
+    "ios_info": {
+     "max_nb_inputs": 256,
+     "max_nb_outputs": 256,
+     "current_nb_inputs": 256,
+     "current_nb_outputs": 256
+    },
+    "panic": false
+   },
+   "name": "Stream",
+   "actions": {
+    "actions": {
+     "set_inputs_audio_data_format": {},
+     "debug_source_set_payload_type": {},
+     "debug_source_set_ssrc": {},
+     "debug_source_set_valid": {},
+     "debug_dump_source_descriptors": {}
+    }
+   }
+  },
+  {
+   "id": 2,
+   "sub_id": 0,
+   "type": 4,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "state": {
+    "lock": {
+     "status": 2,
+     "sync_source": {
+      "module_id": 2,
+      "input_id": 0,
+      "name": "Internal"
+     }
+    },
+    "ptp_master": true,
+    "video_format": "no signal",
+    "delta_phase": 0,
+    "deviation": 0,
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "sync_sources": [
+     {
+      "input_id": 0,
+      "signal_present": true,
+      "signal_lockable": true,
+      "signal_name": "Internal"
+     },
+     {
+      "input_id": 1,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "RAVENNA/AES67"
+     },
+     {
+      "input_id": 2,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "WCK"
+     },
+     {
+      "input_id": 3,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "Video"
+     }
+    ],
+    "panic": false
+   },
+   "sync_source": {
+    "module_id": 2,
+    "input_id": 0
+   },
+   "wordclock_termination": false,
+   "wordclock_out_follow_samplingrate": true,
+   "video_termination": false,
+   "name": "Sync",
+   "actions": {}
+  },
+  {
+   "state": {
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "panic": false,
+    "auto_publish_vumeter": true,
+    "max_connection_delay": 15
+   },
+   "vumeter": {
+    "level_hot": -0.2,
+    "level_dxddsd_hot": 2.8,
+    "level_alignment": -20,
+    "update_period": 100,
+    "decay_integration_time": 25,
+    "peak_hold": true
+   },
+   "router": {
+    "connection_update_algo": 0
+   },
+   "id": 3,
+   "sub_id": 0,
+   "type": 16,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "name": "Router_VuMeter",
+   "actions": {
+    "actions": {
+     "enable_auto_publish_vumeter": {},
+     "get_vumeters": {},
+     "meter_reset_all_holds": {},
+     "meter_reset_modules_holds": {}
+    }
+   }
+  },
+  {
+   "id": 7,
+   "sub_id": 0,
+   "type": 10,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "LTC_out": {
+    "level": 9,
+    "mute_on_stop": false
+   },
+   "state": {
+    "LTC_in": {
+     "value": "##:##:##:##",
+     "frame_rate": "",
+     "running": false
+    },
+    "LTC_out": {
+     "value": "##:##:##:##",
+     "frame_rate": "",
+     "running": false
+    },
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "panic": false
+   },
+   "name": "TimeCode",
+   "actions": {}
+  },
+  {
+   "state": {
+    "channels": [
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     },
+     {
+      "drop_counter": 0,
+      "transparent": false,
+      "latency": 0,
+      "latency_valid": false,
+      "locked": false
+     }
+    ],
+    "ios_info": {
+     "max_nb_inputs": 8,
+     "max_nb_outputs": 8,
+     "current_nb_inputs": 8,
+     "current_nb_outputs": 8
+    },
+    "inputs_audio_data_format_text": "PCM",
+    "outputs_audio_data_format_text": "PCM",
+    "panic": false
+   },
+   "loopback_module_mode": 1,
+   "transparency_check_mode": 1,
+   "transparency_check_word_length": 1,
+   "transparency_check_constant_value": 1,
+   "transparency_check_whitenoise_mode": 1,
+   "transparency_check_constant_bit_flip": false,
+   "transparency_check_disc_count_mode": 0,
+   "wave_generator_frequency": 1000,
+   "wave_generator_level": -20,
+   "transparency_check_audio_data_format": null,
+   "id": 10,
+   "sub_id": 0,
+   "type": 9,
+   "sub_type": 0,
+   "io_hidden": true,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "inputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "outputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "name": "Loopback",
+   "actions": {
+    "actions": {
+     "set_output_audio_data_format_at_352k": {}
+    }
+   }
+  },
+  {
+   "id": 20,
+   "sub_id": 0,
+   "type": 6,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "inputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "outputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "name": "AES",
+   "state": {
+    "ios_info": {
+     "max_nb_inputs": 8,
+     "max_nb_outputs": 8,
+     "current_nb_inputs": 8,
+     "current_nb_outputs": 8
+    },
+    "inputs_audio_data_format_text": "PCM",
+    "outputs_audio_data_format_text": "PCM",
+    "sync_sources": [
+     {
+      "input_id": 0,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "XLR1/2"
+     },
+     {
+      "input_id": 1,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "XLR3/4"
+     },
+     {
+      "input_id": 2,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "XLR5/6"
+     },
+     {
+      "input_id": 3,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "XLR7/8"
+     }
+    ],
+    "panic": false
+   },
+   "actions": {}
+  },
+  {
+   "custom": {
+    "outs": {
+     "mute": false,
+     "attenuation": -240,
+     "roll_off_filter": 2,
+     "channels": [
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      }
+     ],
+     "capabilities": {
+      "mute": true,
+      "attenuation": true,
+      "attenuation_info": {
+       "min": -600,
+       "max": 120,
+       "step": 1
+      },
+      "phase": false,
+      "out_max_level": false,
+      "roll_off_filter": true,
+      "roll_off_filters": {
+       "Slow": 0,
+       "Sharp": 1,
+       "Apodizing": 2,
+       "Brickwall": 3
+      },
+      "speaker_set": false,
+      "channel": {
+       "trim": true,
+       "trim_info": {
+        "min": -600,
+        "max": 0,
+        "step": 1
+       },
+       "phase": false
+      }
+     }
+    }
+   },
+   "id": 30,
+   "sub_id": 0,
+   "type": 15,
+   "sub_type": 0,
+   "I2S_class": 8,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [
+    "com.merging_technologies.analog_out"
+   ],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "outputs_name": [
+    "",
+    ""
+   ],
+   "name": "Headphone",
+   "state": {
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 2,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 2
+    },
+    "outputs_audio_data_format_text": "PCM",
+    "panic": false
+   },
+   "actions": {}
+  },
+  {
+   "factory_settings": {
+    "serial_number": 85972,
+    "manufacturing_code": 0,
+    "type": 0,
+    "hardware_run": 14,
+    "serial_number_label": "DS85972"
+   },
+   "custom": {
+    "outs": {
+     "mute": false,
+     "attenuation": -295,
+     "out_max_level": 0,
+     "roll_off_filter": 2,
+     "channels": [
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      },
+      {
+       "trim": 0
+      }
+     ],
+     "capabilities": {
+      "mute": true,
+      "attenuation": true,
+      "attenuation_info": {
+       "min": -600,
+       "max": 0,
+       "step": 1
+      },
+      "phase": false,
+      "out_max_level": true,
+      "roll_off_filter": true,
+      "roll_off_filters": {
+       "Slow": 0,
+       "Sharp": 1,
+       "Apodizing": 2,
+       "Brickwall": 3
+      },
+      "speaker_set": false,
+      "channel": {
+       "trim": true,
+       "trim_info": {
+        "min": -600,
+        "max": 0,
+        "step": 1
+       },
+       "phase": false
+      }
+     }
+    }
+   },
+   "id": 60,
+   "sub_id": 0,
+   "type": 20,
+   "sub_type": 218,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [
+    "com.merging_technologies.analog_out"
+   ],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "outputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "state": {
+    "FPGA_version": 54,
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 8,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 8
+    },
+    "outputs_audio_data_format_text": "PCM",
+    "panic": false
+   },
+   "name": "D/A 1",
+   "actions": {}
+  },
+  {
+   "physical_mode": 1,
+   "id": 100,
+   "sub_id": 0,
+   "type": 26,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "inputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "outputs_name": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "name": "SPDIF",
+   "state": {
+    "ios_info": {
+     "max_nb_inputs": 8,
+     "max_nb_outputs": 8,
+     "current_nb_inputs": 2,
+     "current_nb_outputs": 2
+    },
+    "inputs_audio_data_format_text": "PCM",
+    "outputs_audio_data_format_text": "PCM",
+    "sync_sources": [
+     {
+      "input_id": 0,
+      "signal_present": false,
+      "signal_lockable": false,
+      "signal_name": "Optical"
+     }
+    ],
+    "panic": false
+   },
+   "actions": {}
+  },
+  {
+   "outputs_1to8": 0,
+   "id": 200,
+   "sub_id": 0,
+   "type": 253,
+   "sub_type": 0,
+   "io_hidden": true,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "name": "GPIO",
+   "state": {
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "panic": false
+   },
+   "actions": {}
+  },
+  {
+   "enabled": true,
+   "id": 201,
+   "sub_id": 0,
+   "type": 254,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "state": {
+    "active_sensing_detected": false,
+    "emitting": false,
+    "receiving": false,
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "panic": false
+   },
+   "name": "MIDI DIN",
+   "actions": {
+    "actions": {
+     "debug_set_gpo": {},
+     "debug_get_gpi": {}
+    }
+   }
+  },
+  {
+   "state": {
+    "ios_info": {
+     "max_nb_inputs": 0,
+     "max_nb_outputs": 0,
+     "current_nb_inputs": 0,
+     "current_nb_outputs": 0
+    },
+    "panic": false
+   },
+   "debug1": null,
+   "debug2": false,
+   "debug3": false,
+   "debug4": false,
+   "debug5": false,
+   "debug6": false,
+   "id": 203,
+   "sub_id": 0,
+   "type": 255,
+   "sub_type": 0,
+   "io_hidden": false,
+   "is_volatile": false,
+   "schemas": [],
+   "inputs_audio_data_format_at_352k8": 0,
+   "outputs_audio_data_format_at_352k8": 0,
+   "name": "Debug",
+   "actions": {}
+  }
+ ],
+ "_connections": [
+  {
+   "id": 1,
+   "in": {
+    "io_group_id": "1",
+    "channel_id": 4
+   },
+   "out": {
+    "io_group_id": "30",
+    "channel_id": 0
+   },
+   "delay": 0,
+   "state": {
+    "_status": 1,
+    "converter_status": 0
+   }
+  },
+  {
+   "id": 2,
+   "in": {
+    "io_group_id": "1",
+    "channel_id": 5
+   },
+   "out": {
+    "io_group_id": "30",
+    "channel_id": 1
+   },
+   "delay": 0,
+   "state": {
+    "_status": 1,
+    "converter_status": 0
+   }
+  },
+  {
+   "id": 3,
+   "in": {
+    "io_group_id": "1",
+    "channel_id": 0
+   },
+   "out": {
+    "io_group_id": "60",
+    "channel_id": 0
+   },
+   "delay": 0,
+   "state": {
+    "_status": 1,
+    "converter_status": 0
+   }
+  },
+  {
+   "id": 4,
+   "in": {
+    "io_group_id": "1",
+    "channel_id": 1
+   },
+   "out": {
+    "io_group_id": "60",
+    "channel_id": 1
+   },
+   "delay": 0,
+   "state": {
+    "_status": 1,
+    "converter_status": 0
+   }
+  },
+  {
+   "id": 5,
+   "in": {
+    "io_group_id": "1",
+    "channel_id": 2
+   },
+   "out": {
+    "io_group_id": "60",
+    "channel_id": 2
+   },
+   "delay": 0,
+   "state": {
+    "_status": 1,
+    "converter_status": 0
+   }
+  },
+  {
+   "id": 6,
+   "in": {
+    "io_group_id": "1",
+    "channel_id": 3
+   },
+   "out": {
+    "io_group_id": "60",
+    "channel_id": 3
+   },
+   "delay": 0,
+   "state": {
+    "_status": 1,
+    "converter_status": 0
+   }
+  }
+ ],
+ "state": {
+  "muted": false
+ },
+ "_firmware_update": {
+  "state": {
+   "state": 0,
+   "text": "",
+   "percent": 0
+  }
+ },
+ "NMOS": {
+  "api": {
+   "port": 1936,
+   "enable": false,
+   "flushOnDisable": false,
+   "UUIDFromName": false,
+   "versions": {
+    "IS-04": [
+     "v1.2",
+     "v1.3"
+    ],
+    "IS-05": [
+     "v1.0",
+     "v1.1"
+    ]
+   }
+  },
+  "state": {
+   "registrationServer": {
+    "name": "",
+    "address": "",
+    "host": "",
+    "port": 80,
+    "registered": false
+   }
+  },
+  "configuration": {
+   "mode": 2,
+   "search_domain": "audio.variance",
+   "found_search_domain": "audio.variance",
+   "address": "",
+   "is_04_ver": "v1.2"
+  }
+ },
+ "HOME": {
+  "natsAddress": "nats.home:4222",
+  "enable": false,
+  "registered": "initializing",
+  "serverAddress": "",
+  "shortLabel": ""
+ },
+ "_oem_ui_process_engine": {
+  "hapimkii": {
+   "actions": {}
+  },
+  "hapi_settings": {
+   "user_interface": {
+    "oled_dim": 2,
+    "logo_dim": 85
+   },
+   "missions": {
+    "missions": [
+     {
+      "id": 20,
+      "name": "HapiMkII",
+      "authorized": true,
+      "description": "",
+      "label": "HapiMkII",
+      "image_name": ""
+     }
+    ],
+    "current_mission_id": 0,
+    "current_url": "/mnt/oem/var/web/zen/index.html"
+   }
+  },
+  "presets": [
+   {
+    "id": 0,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 1,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 2,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 3,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 4,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 5,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 6,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 7,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 8,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 9,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 10,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 11,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 12,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 13,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 14,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 15,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 16,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   },
+   {
+    "id": 17,
+    "read_only": false,
+    "name": "",
+    "comment": "",
+    "color": "#000000",
+    "empty": true
+   }
+  ],
+  "subsets": {},
+  "access_control": {
+   "items": [],
+   "locks": []
+  }
+ }
+}

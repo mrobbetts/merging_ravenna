@@ -33,6 +33,7 @@ const { moduleOutsPath, PARAMS, dbToTenths } = require('./paths');
  *   'tree'     (tree)      full state tree (path:"$")
  *   'catalog'  (array)     flattened parameter catalog (rebuilt on every tree)
  *   'param'    (entry)     a single changed parameter we could resolve from a settings echo
+ *   'meter'    (data)      a /ravenna/meter frame (only with opts.meters; ~every 100 ms)
  *   'error'    (Error)
  */
 class RavennaEngine extends EventEmitter {
@@ -53,6 +54,12 @@ class RavennaEngine extends EventEmitter {
     // maps to 0 dBFS: CONFIRMED 65535 (2^16-1, 16-bit unsigned) by feeding a 0 dBFS
     // tone to a RAVENNA input (meter read 65534). Overridable for other hardware.
     this.meterFullScale = opts.meterFullScale || 65535;
+
+    // Continuous metering (opt-in): subscribe /ravenna/meter on every (re)connect and
+    // emit each frame as 'meter'. Off by default — a control-only consumer shouldn't
+    // pull ~10 frames/s of vumeter traffic it never reads. sampleMeters() is unaffected
+    // (it rides its own windowed subscribe + the 'raw' event).
+    this.meters = opts.meters === true;
 
     // injectable for tests
     this._WebSocket = opts.WebSocket || WebSocket;
@@ -124,6 +131,9 @@ class RavennaEngine extends EventEmitter {
       { channel: '/meta/subscribe', subscription: '/ravenna/settings', id: this._nextId(), clientId: this.clientId },
       { channel: '/meta/subscribe', subscription: '/ravenna/status', id: this._nextId(), clientId: this.clientId },
       { channel: '/meta/subscribe', subscription: '/ravenna/errors', id: this._nextId(), clientId: this.clientId },
+      ...(this.meters
+        ? [{ channel: '/meta/subscribe', subscription: '/ravenna/meter', id: this._nextId(), clientId: this.clientId }]
+        : []),
       { channel: '/service/ravenna/commands', data: { command: 'update' }, id: this._nextId(), clientId: this.clientId }
     ]);
   }
@@ -404,6 +414,8 @@ class RavennaEngine extends EventEmitter {
       return;
     }
     if (ch === '/meta/subscribe') return;
+
+    if (ch === '/ravenna/meter') { this.emit('meter', m.data); return; }
 
     if (ch === '/ravenna/settings' || ch === '/ravenna/status') {
       const d = m.data;

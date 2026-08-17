@@ -103,7 +103,12 @@ unfamiliar firmware.
 
 ## API (summary)
 
-- `new RavennaEngine({ host, path?, livenessMs?, backoff? })`
+- `new RavennaEngine({ host, path?, livenessMs?, backoff?, meters? })` — `host` accepts `ip` or
+  `ip:port`. Hardware serves on port 80; the Merging Virtual Audio Device (macOS/Windows)
+  speaks the same protocol on `<machine-ip>:9090` (LAN IP only, system domain + subtrees
+  but no audio modules). `meters: true` subscribes `/ravenna/meter` on every (re)connect
+  and emits each frame (~10/s) as a `'meter'` event — for continuous metering consumers
+  (decode with `RavennaEngine.meterLevelsFor` / `dbFromLevel`)
 - `.connect()`, `.close()`
 - `.setParam(moduleId, key, value, { channelIndex? })` — high-level, unit-aware, clamped; enums accept a label or int
 - `.setModuleOuts(moduleId, valueObj)` — mid-level
@@ -112,7 +117,7 @@ unfamiliar firmware.
 - `.getSystem()`, `.getSystemValue(key)` — modeled system snapshot
 - `.getTree()`, `.getSubtree(path)` — raw last tree / any subtree by dotted-or-`$` path
 - `.catalog`, `.tree`, `.capabilities`, `.online`
-- events: `online, offline, status, settings, statusmsg, errors, tree, catalog, param, system, error`
+- events: `online, offline, status, settings, statusmsg, errors, tree, catalog, param, system, meter, error`
 
 ## Testing
 

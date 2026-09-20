@@ -101,6 +101,11 @@ temperature, uptime) is marked `readonly` and never settable. Some params carry 
 mode). Use `scripts/discover-system.js` (read-only) to dump the system tree on
 unfamiliar firmware.
 
+Between full settings trees the device broadcasts pathed `/ravenna/status` patches
+(`$.network.PTP.Status` every couple of seconds); the engine folds those into its tree
+and re-emits `system` when a reading changed, so PTP lock / jitter stay live. (The
+reduced root status tree is still not ingested — it would wipe capabilities.)
+
 ## API (summary)
 
 - `new RavennaEngine({ host, path?, livenessMs?, backoff?, meters? })` — `host` accepts `ip` or

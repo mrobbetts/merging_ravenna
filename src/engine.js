@@ -5,6 +5,28 @@ const WebSocket = require('ws');
 const { buildCatalog } = require('./catalog');
 const { checkCompat } = require('./compat');
 const { readSystem, systemWriteFrame } = require('./system');
+
+// Apply a pathed patch ('$.a.b.c' → value) to the tree in place. Only plain dotted paths
+// are handled — a filtered path ('$._modules[?(@.id==60)]…') is left to the settings echo
+// machinery — and the value replaces the addressed subtree. Returns whether it applied.
+function applyDottedPatch(tree, path, value) {
+  if (!path.startsWith('$.') || /[[\]()]/.test(path) || value === undefined) return false;
+  const segs = path.slice(2).split('.').filter(Boolean);
+  if (segs.length === 0) return false;
+  let node = tree;
+  for (const s of segs.slice(0, -1)) {
+    if (node[s] == null || typeof node[s] !== 'object') node[s] = {};
+    node = node[s];
+  }
+  node[segs[segs.length - 1]] = value;
+  return true;
+}
+
+// The raw system readings, as one comparable string — uptime excluded, since it changes
+// on every read by construction.
+function systemSignature(snap) {
+  return JSON.stringify((snap || []).filter((e) => e.key !== 'uptime').map((e) => [e.key, e.raw]));
+}
 const { moduleOutsPath, PARAMS, dbToTenths } = require('./paths');
 
 /**
@@ -432,6 +454,17 @@ class RavennaEngine extends EventEmitter {
         this.emit('settings', d);
         this._maybeEmitParam(d);
       } else {
+        // A PATHED /ravenna/status push is a live patch of one subtree — the device
+        // broadcasts $.network.PTP.Status every couple of seconds. Without applying it,
+        // PTP lock / jitter only refresh on the next full settings tree (a connect or a
+        // settings change), which left consumers reading "unlocked" hours after the
+        // clock had locked. Apply it in place (no capability wipe — it is not '$') and
+        // re-read the system domain, emitting only when something actually changed.
+        if (d && typeof d.path === 'string' && d.path !== '$' && this.tree && applyDottedPatch(this.tree, d.path, d.value)) {
+          const before = systemSignature(this.system);
+          this.system = readSystem(this.tree);
+          if (systemSignature(this.system) !== before) this.emit('system', this.system);
+        }
         this.emit('statusmsg', d);
       }
       return;

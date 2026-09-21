@@ -129,10 +129,36 @@ test('liveness watchdog fires offline after silence, once', () => {
   clock.advance(6000);
   assert.strictEqual(eng.online, true, 'frame reset the watchdog');
 
-  // now go silent past the window
-  clock.advance(7001);
+  // now go silent past the window: the engine PROBES first (an update request)…
+  const sentBefore = ws.sent.length;
+  clock.advance(1001); // 7 s since the last frame (at 6000) passes at 13000
+  assert.strictEqual(eng.online, true, 'quiet is not dead: still online while the probe is out');
+  assert.ok(ws.sent.slice(sentBefore).some((s) => s.includes('"command":"update"')), 'probe sent');
+  // …and only an unanswered probe is stale
+  clock.advance(3000);
   assert.strictEqual(eng.online, false);
   assert.deepStrictEqual(offline, ['timeout']);
+});
+
+test('a quiet device that answers the probe stays online indefinitely', () => {
+  const clock = makeClock();
+  const eng = freshEngine(clock);
+  const offline = [];
+  eng.on('offline', (r) => offline.push(r));
+  eng.connect();
+  const ws = FakeWS.instances[0];
+  ws.fireOpen();
+  ws.fireMessage(handshakeReply('0xabc-1'));
+  ws.fireMessage([{ channel: '/ravenna/settings', data: { path: '$', value: { _modules: [] } } }]);
+  for (let round = 0; round < 5; round++) {
+    const sentBefore = ws.sent.length;
+    clock.advance(7001); // quiet -> probe
+    assert.strictEqual(ws.sent.length, sentBefore + 1, 'one probe per quiet window');
+    clock.advance(1000);
+    ws.fireMessage([{ channel: '/ravenna/settings', data: { path: '$', value: { _modules: [] } } }]); // the answer
+  }
+  assert.strictEqual(eng.online, true);
+  assert.deepStrictEqual(offline, []);
 });
 
 test('exponential backoff schedule on a dead host, then recovers', () => {

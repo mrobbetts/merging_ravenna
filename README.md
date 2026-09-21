@@ -34,6 +34,11 @@ eng.setParam(60, 'attenuation', -20);
 
 ## Why it is resilient
 
+A quiet device is not a dead one: after `livenessMs` of silence the engine sends an
+update request and only declares the device stale if that goes unanswered for
+`probeGraceMs` (a VAD without a PTP clock pushes no status at all, yet answers).
+
+
 The engine handles two failure modes differently:
 
 - **Socket drop / device powered off** → exponential-backoff reconnect

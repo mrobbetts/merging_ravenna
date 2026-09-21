@@ -1,6 +1,6 @@
 {
   "name": "merging-ravenna",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Standalone client for Merging Technologies RAVENNA devices (Hapi / Horus / Anubis) over their CometD/WebSocket control protocol. Unofficial; not affiliated with Merging Technologies.",
   "keywords": [
     "merging",

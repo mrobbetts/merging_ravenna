@@ -37,10 +37,13 @@ const { moduleOutsPath, PARAMS, dbToTenths } = require('./paths');
  * Resilience model (two distinct failure modes, handled differently):
  *  - socket drop / device power-off  -> exponential backoff reconnect, forever
  *  - device wedged but socket "open" -> data-liveness watchdog: if no frame
- *    arrives within `livenessMs`, declare stale, tear down, fall into backoff.
+ *    arrives within `livenessMs`, ASK (an update request the device must answer);
+ *    silence through `probeGraceMs` more is stale: tear down, fall into backoff.
  *
- * The device emits /ravenna/status roughly every 2 s, so silence beyond ~7 s
- * is a reliable "gone" signal.
+ * The device emits /ravenna/status roughly every 2 s while it has something to
+ * say — but a quiet device is not a dead one (a VAD with no PTP clock pushes
+ * nothing, and the CometD long-poll is silent for a minute), so silence alone
+ * must not mean "gone": that flapped online/offline every 9 s for hours.
  *
  * online/offline are emitted ONCE PER TRANSITION (edge-triggered), so consumers
  * (e.g. a Stream Deck display) can react without being spammed.
@@ -67,7 +70,9 @@ class RavennaEngine extends EventEmitter {
     this.origin = opts.origin || `http://${host}`;
     this.host = host;
 
-    this.livenessMs = opts.livenessMs || 7000;          // staleness window
+    this.livenessMs = opts.livenessMs || 7000;          // quiet this long -> probe
+    this.probeGraceMs = opts.probeGraceMs || 3000;      // probe unanswered this long -> stale
+    this._probing = false;
     this.backoff = opts.backoff || [2000, 5000, 15000, 30000]; // capped schedule
     this._backoffIdx = 0;
 
@@ -543,10 +548,22 @@ class RavennaEngine extends EventEmitter {
 
   _kickLiveness() {
     this._clearLiveness();
-    this._livenessTimer = this._setTimeout(() => {
+    this._probing = false;
+    this._livenessTimer = this._setTimeout(() => this._onQuiet(), this.livenessMs);
+  }
+
+  // Silence is not death. Ask once (the device answers an update request with its
+  // tree, which also refreshes our state); only an unanswered probe is stale.
+  _onQuiet() {
+    if (this._probing) {
       this.emit('status', 'stale');
       this._teardownAndReconnect('timeout');
-    }, this.livenessMs);
+      return;
+    }
+    this._probing = true;
+    this.emit('status', 'probing');
+    this.requestUpdate();
+    this._livenessTimer = this._setTimeout(() => this._onQuiet(), this.probeGraceMs);
   }
 
   _clearLiveness() {

@@ -106,10 +106,14 @@ temperature, uptime) is marked `readonly` and never settable. Some params carry 
 mode). Use `scripts/discover-system.js` (read-only) to dump the system tree on
 unfamiliar firmware.
 
-Between full settings trees the device broadcasts pathed `/ravenna/status` patches
-(`$.network.PTP.Status` every couple of seconds); the engine folds those into its tree
-and re-emits `system` when a reading changed, so PTP lock / jitter stay live. (The
-reduced root status tree is still not ingested — it would wipe capabilities.)
+Between full settings trees the device speaks in patches, and the engine folds every
+shape seen on hardware into its tree, re-emitting `system` when a reading changed: pathed
+pushes on either channel (`$.network.PTP.Status` every couple of seconds, `$.ios`,
+`$.network.PTP`, a module by id `$._modules[?(@.id==2)][0]` — merged, never replaced),
+a one-key settings echo at `$` (`{ _auto_sample_rate: false }` — merged, not taken for a
+tree), and the periodic reduced status `$` (only per-module health `state` is folded;
+its stripped modules never touch capabilities). Only a settings `$` carrying `_modules`
+is ingested as the authoritative tree.
 
 ## API (summary)
 

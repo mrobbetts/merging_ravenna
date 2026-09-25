@@ -6,20 +6,76 @@ const { buildCatalog } = require('./catalog');
 const { checkCompat } = require('./compat');
 const { readSystem, systemWriteFrame } = require('./system');
 
-// Apply a pathed patch ('$.a.b.c' → value) to the tree in place. Only plain dotted paths
-// are handled — a filtered path ('$._modules[?(@.id==60)]…') is left to the settings echo
-// machinery — and the value replaces the addressed subtree. Returns whether it applied.
-function applyDottedPatch(tree, path, value) {
-  if (!path.startsWith('$.') || /[[\]()]/.test(path) || value === undefined) return false;
-  const segs = path.slice(2).split('.').filter(Boolean);
-  if (segs.length === 0) return false;
+const isPlainObject = (x) => x !== null && typeof x === 'object' && !Array.isArray(x);
+
+// Deep-merge a patch into a node in place: objects merge, everything else (scalars,
+// arrays) replaces. A device echo names only what changed, so a module-root patch of
+// `{ id, custom: { outs: { mute } } }` must not erase the capabilities beside `mute`.
+function deepMerge(target, patch) {
+  for (const [k, v] of Object.entries(patch)) {
+    if (isPlainObject(v) && isPlainObject(target[k])) deepMerge(target[k], v);
+    else target[k] = v;
+  }
+  return target;
+}
+
+// Apply a pathed patch to the tree in place and report whether it landed. Handles the
+// two shapes the devices are seen to use: plain dotted paths ('$.network.PTP.Status',
+// '$.ios') and a module addressed by id ('$._modules[?(@.id==2)][0]', optionally with a
+// dotted tail). Anything else (sessions/sinks filters and the like) is left alone.
+const MODULE_FILTER = /^\$\._modules\[\?\(@\.id==(\d+)\)\]\[0\](?:\.(.+))?$/;
+function applyPatch(tree, path, value) {
+  if (!tree || typeof path !== 'string' || value === undefined) return false;
   let node = tree;
-  for (const s of segs.slice(0, -1)) {
-    if (node[s] == null || typeof node[s] !== 'object') node[s] = {};
+  let tail = null;
+  const m = MODULE_FILTER.exec(path);
+  if (m) {
+    node = Array.isArray(tree._modules) ? tree._modules.find((mod) => mod && mod.id === Number(m[1])) : null;
+    if (!node) return false;
+    tail = m[2] ? m[2].split('.') : [];
+  } else {
+    if (!path.startsWith('$.') || /[[\]()]/.test(path)) return false;
+    tail = path.slice(2).split('.').filter(Boolean);
+    if (tail.length === 0) return false;
+  }
+  for (const s of tail.slice(0, -1)) {
+    if (!isPlainObject(node[s])) node[s] = {};
     node = node[s];
   }
-  node[segs[segs.length - 1]] = value;
+  if (tail.length === 0) {
+    if (!isPlainObject(value)) return false;
+    deepMerge(node, value);
+  } else {
+    const leaf = tail[tail.length - 1];
+    if (isPlainObject(value) && isPlainObject(node[leaf])) deepMerge(node[leaf], value);
+    else node[leaf] = value;
+  }
   return true;
+}
+
+// The periodic reduced status tree: modules carry only { state, id, type }. Fold the
+// per-module `state` (health: temperature, load, panic) and the top-level `state` into
+// the authoritative tree by id — never the module's other keys, which would wipe
+// capabilities. Returns whether anything was folded.
+function mergeReducedStatus(tree, reduced) {
+  if (!tree || !isPlainObject(reduced)) return false;
+  let touched = false;
+  if (Array.isArray(reduced._modules) && Array.isArray(tree._modules)) {
+    for (const rm of reduced._modules) {
+      if (!rm || !isPlainObject(rm.state)) continue;
+      const mod = tree._modules.find((x) => x && x.id === rm.id);
+      if (!mod) continue;
+      if (!isPlainObject(mod.state)) mod.state = {};
+      deepMerge(mod.state, rm.state);
+      touched = true;
+    }
+  }
+  if (isPlainObject(reduced.state)) {
+    if (!isPlainObject(tree.state)) tree.state = {};
+    deepMerge(tree.state, reduced.state);
+    touched = true;
+  }
+  return touched;
 }
 
 // The raw system readings, as one comparable string — uptime excluded, since it changes
@@ -50,7 +106,7 @@ const { moduleOutsPath, PARAMS, dbToTenths } = require('./paths');
  *
  * Events:
  *   'online'   ()          device reachable AND full state received
- *   'offline'  (reason)    device unreachable/stale; reason: 'timeout'|'closed'|'connect-failed'
+ *   'offline'  (reason)    device unreachable/stale; reason: 'timeout'|'closed'|'connect-failed'|'refused'
  *   'status'   (str)       fine-grained: 'starting'|'open'|'handshaking'|'connected'|'stale'|'reconnecting'
  *   'settings' (data)      a /ravenna/settings broadcast { path, value }
  *   'statusmsg'(data)      a /ravenna/status broadcast { path, value }
@@ -72,6 +128,7 @@ class RavennaEngine extends EventEmitter {
 
     this.livenessMs = opts.livenessMs || 7000;          // quiet this long -> probe
     this.probeGraceMs = opts.probeGraceMs || 3000;      // probe unanswered this long -> stale
+    this.handshakeTimeoutMs = opts.handshakeTimeoutMs || 10000; // WebSocket upgrade never completing
     this._probing = false;
     this.backoff = opts.backoff || [2000, 5000, 15000, 30000]; // capped schedule
     this._backoffIdx = 0;
@@ -121,7 +178,8 @@ class RavennaEngine extends EventEmitter {
     this._closing = true;
     this._clearReconnect();
     this._clearLiveness();
-    try { if (this.ws) this.ws.close(); } catch (e) { /* ignore */ }
+    try { if (this.ws) { this.ws.removeAllListeners(); this.ws.close(); } } catch (e) { /* ignore */ }
+    this.ws = null; // a later connect() must not be torn down by the old socket's close
     this._goOffline('closed');
   }
 
@@ -382,6 +440,16 @@ class RavennaEngine extends EventEmitter {
     this.emit('system', this.system);
   }
 
+  // Apply a live patch to the tree (the callback does the write and says whether it
+  // landed) and re-read the system domain, emitting only when a raw reading changed.
+  _patchTree(apply) {
+    if (!this.tree || !apply()) return false;
+    const before = systemSignature(this.system);
+    this.system = readSystem(this.tree);
+    if (systemSignature(this.system) !== before) this.emit('system', this.system);
+    return true;
+  }
+
   /** The last full settings tree received (raw), or null. */
   getTree() { return this.tree; }
 
@@ -440,6 +508,14 @@ class RavennaEngine extends EventEmitter {
       else this._teardownAndReconnect('connect-failed');
       return;
     }
+    // A reply the device REFUSED is not a sign of life: a session the server has
+    // expired (402::Unknown client) answers every request with successful:false
+    // while /meta/connect never returns — the socket would look alive forever.
+    if ((ch === '/meta/subscribe' || (typeof ch === 'string' && ch.startsWith('/service/'))) && m.successful === false) {
+      this.emit('error', new Error(`${ch} refused: ${m.error || 'unknown'}`));
+      this._teardownAndReconnect('refused');
+      return;
+    }
     if (ch === '/meta/subscribe') return;
 
     if (ch === '/ravenna/meter') { this.emit('meter', m.data); return; }
@@ -447,29 +523,32 @@ class RavennaEngine extends EventEmitter {
     if (ch === '/ravenna/settings' || ch === '/ravenna/status') {
       const d = m.data;
       if (d && d.path === '$' && d.value) {
-        // Only /ravenna/settings carries the AUTHORITATIVE full tree (modules with
-        // custom/capabilities). The periodic /ravenna/status '$' is a REDUCED tree
-        // (modules carry only {state,id,type}); ingesting it would wipe capabilities
-        // and the catalog every ~2 s. So ingest from settings only — but either '$'
-        // is sufficient to declare the device reachable.
-        if (ch === '/ravenna/settings') this._ingestTree(d.value);
+        // Only a /ravenna/settings '$' that carries `_modules` is the AUTHORITATIVE full
+        // tree (modules with custom/capabilities). Two other root-path shapes exist and
+        // must NOT be ingested as the tree: the periodic /ravenna/status '$' is a REDUCED
+        // tree (modules carry only {state,id,type} — ingesting it would wipe capabilities
+        // and the catalog every ~2 s), and a settings echo for a top-level flag arrives
+        // as '$' with a ONE-key value (`{ _auto_sample_rate: false }` — ingesting it
+        // replaced the whole tree with that object). Either '$' is sufficient to declare
+        // the device reachable.
+        if (ch === '/ravenna/settings' && Array.isArray(d.value._modules)) this._ingestTree(d.value);
+        else if (ch === '/ravenna/settings') this._patchTree(() => isPlainObject(d.value) && !!deepMerge(this.tree, d.value));
+        else this._patchTree(() => mergeReducedStatus(this.tree, d.value));
         if (!this.online) { this.online = true; this.emit('online'); }
+      } else if (d && typeof d.path === 'string' && d.path !== '$') {
+        // A PATHED push on either channel is a live patch of one subtree — the device
+        // broadcasts $.network.PTP.Status every couple of seconds on /ravenna/status, and
+        // echoes settings writes as $.ios / $.network.PTP / $._modules[?(@.id==2)][0]. Without
+        // applying them, PTP lock, frame size, clock source… only refresh on the next full
+        // tree (a connect), which left consumers reading "unlocked" hours after the clock
+        // had locked. Apply in place (merge, so nothing beside the change is lost) and
+        // re-read the system domain, emitting only when a reading actually changed.
+        this._patchTree(() => applyPatch(this.tree, d.path, d.value));
       }
       if (ch === '/ravenna/settings') {
         this.emit('settings', d);
         this._maybeEmitParam(d);
       } else {
-        // A PATHED /ravenna/status push is a live patch of one subtree — the device
-        // broadcasts $.network.PTP.Status every couple of seconds. Without applying it,
-        // PTP lock / jitter only refresh on the next full settings tree (a connect or a
-        // settings change), which left consumers reading "unlocked" hours after the
-        // clock had locked. Apply it in place (no capability wipe — it is not '$') and
-        // re-read the system domain, emitting only when something actually changed.
-        if (d && typeof d.path === 'string' && d.path !== '$' && this.tree && applyDottedPatch(this.tree, d.path, d.value)) {
-          const before = systemSignature(this.system);
-          this.system = readSystem(this.tree);
-          if (systemSignature(this.system) !== before) this.emit('system', this.system);
-        }
         this.emit('statusmsg', d);
       }
       return;
@@ -597,13 +676,17 @@ class RavennaEngine extends EventEmitter {
   _open() {
     let ws;
     try {
-      ws = new this._WebSocket(this.url, { perMessageDeflate: true, origin: this.origin });
+      // handshakeTimeout: a host that accepts the TCP connect but never completes the
+      // upgrade (a half-booted device) otherwise yields no open, close or error — and
+      // nothing would ever retry. ws turns the timeout into error + close.
+      ws = new this._WebSocket(this.url, { perMessageDeflate: true, origin: this.origin, handshakeTimeout: this.handshakeTimeoutMs });
     } catch (e) {
       this.emit('error', e);
       this._teardownAndReconnect('connect-failed');
       return;
     }
     this.ws = ws;
+    this._kickLiveness(); // the clock runs from the attempt, not from `open`
     ws.on('open', () => {
       this.emit('status', 'open');
       this.msgId = 0; this.clientId = null;

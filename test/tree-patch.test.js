@@ -135,3 +135,29 @@ test('a socket that never completes the upgrade is torn down and retried', () =>
   clock.advance(2000); // backoff
   assert.strictEqual(NeverOpens.count, 2, 'a fresh socket was attempted');
 });
+
+test('a device with NO audio modules (the VAD) has its full tree ingested, and patches land on it', () => {
+  const vad = () => ({ identity: { product: 'CoreAudio' }, ios: [{ id: '1', configuration: { sampleRate: 44100 } }], network: { PTP: { Status: { LockStatus: 1 } } }, sessions: {}, capabilities: {} });
+  const eng = new RavennaEngine({ host: 'x', ...inert });
+  const systems = [];
+  const trees = [];
+  eng.on('system', (s) => systems.push(s));
+  eng.on('tree', (t2) => trees.push(t2));
+  eng._handleMessage(frame('/ravenna/settings', '$', vad()));
+  assert.strictEqual(trees.length, 1, 'ingested although it has no _modules');
+  assert.strictEqual(find(eng.system, 'sample_rate').raw, 44100);
+  eng._handleMessage(frame('/ravenna/status', '$.network.PTP.Status', { LockStatus: 3 }));
+  assert.strictEqual(find(systems.at(-1), 'ptp_lock_status').raw, 3);
+  const v2 = vad(); v2.ios[0].configuration.sampleRate = 96000;
+  eng._handleMessage(frame('/ravenna/settings', '$', v2));
+  assert.strictEqual(trees.length, 2, 'every later full tree is ingested too');
+  assert.strictEqual(find(eng.system, 'sample_rate').raw, 96000);
+});
+
+test('the very first "$" is taken as the tree even if it looks partial (nothing to merge into)', () => {
+  const eng = new RavennaEngine({ host: 'x', ...inert });
+  const trees = [];
+  eng.on('tree', (t2) => trees.push(t2));
+  eng._handleMessage(frame('/ravenna/settings', '$', { _auto_sample_rate: false }));
+  assert.strictEqual(trees.length, 1);
+});

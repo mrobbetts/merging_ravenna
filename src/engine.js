@@ -19,6 +19,15 @@ function deepMerge(target, patch) {
   return target;
 }
 
+// Is a settings "$" value the AUTHORITATIVE full tree, or a partial echo of a top-level
+// flag ({ _auto_sample_rate: false })? Every device's full tree carries `identity` —
+// `_modules` does NOT discriminate: a virtual device (the macOS VAD) has no audio modules
+// at all, and testing for them left its tree un-ingested and its state frozen for days.
+// The first tree is always taken: there is nothing to merge a partial into.
+function isFullTree(value, current) {
+  return !current || isPlainObject(value.identity);
+}
+
 // Apply a pathed patch to the tree in place and report whether it landed. Handles the
 // two shapes the devices are seen to use: plain dotted paths ('$.network.PTP.Status',
 // '$.ios') and a module addressed by id ('$._modules[?(@.id==2)][0]', optionally with a
@@ -531,7 +540,7 @@ class RavennaEngine extends EventEmitter {
         // as '$' with a ONE-key value (`{ _auto_sample_rate: false }` — ingesting it
         // replaced the whole tree with that object). Either '$' is sufficient to declare
         // the device reachable.
-        if (ch === '/ravenna/settings' && Array.isArray(d.value._modules)) this._ingestTree(d.value);
+        if (ch === '/ravenna/settings' && isFullTree(d.value, this.tree)) this._ingestTree(d.value);
         else if (ch === '/ravenna/settings') this._patchTree(() => isPlainObject(d.value) && !!deepMerge(this.tree, d.value));
         else this._patchTree(() => mergeReducedStatus(this.tree, d.value));
         if (!this.online) { this.online = true; this.emit('online'); }
